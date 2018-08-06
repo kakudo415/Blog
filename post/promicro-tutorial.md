@@ -19,12 +19,13 @@ Leonardoとかには常に5Vを出力してくれる5Vピンがあるらしい�
 電子工作の世界ではLEDをチカチカさせるのがプログラムでいう Hello World 的な立ち位置らしい  
 だけど、外部にわざわざLEDと導線用意するのはめんどくさいのでProMicroに乗っているLEDを使ってやってみる  
 
-<pre><code>void setup() {} // Pro Microの起動時に一回だけ呼ばれる関数、今回は使わない  
-void loop() { // その名の通り起動中はこの関数が繰り返し呼ばれる
-	digitalWrite(17, HIGH); // 17番ピンに電気を流す（今回は何も繋いでいないが内部でオンボードLEDと繋がっている）
-	delay(1000); // 1000ミリ秒 = 1秒待つ
-	digitalWrite(17, LOW); // 17番ピンの電気を止める（LEDが消える）
-	delay(1000); // また1秒待つ
+<pre><code>void setup() {}              // Pro Microの起動時に一回だけ呼ばれる関数、今回は使わない
+
+void loop() {                // その名の通り起動中はこの関数が繰り返し呼ばれる
+	digitalWrite(17, HIGH);  // 17番ピンに電気を流す（今回は何も繋いでいないが内部でオンボードLEDと繋がっている）
+	delay(1000);             // 1000ミリ秒 = 1秒待つ
+	digitalWrite(17, LOW);   // 17番ピンの電気を止める（LEDが消える）
+	delay(1000);             // また1秒待つ
 }</code></pre>
 
 このプログラムをArduino IDEを使って書き込んでみるとゆっくりLEDが点滅させることができる  
@@ -34,14 +35,15 @@ void loop() { // その名の通り起動中はこの関数が繰り返し呼ば
 **下のプログラムは実行しないで！！！！！**
 
 <pre><code>void setup() {
-	pinMode(7, INPUT); // pinMode関数を使って7番ピンを入力として使うことを宣言
-	digitalWrite(9, HIGH); // 9番ピンに電気を流す ここからスイッチ等を通して7番ピンに繋ぐ
-}  
+	pinMode(7, INPUT);              // pinMode関数を使って7番ピンを入力として使うことを宣言
+	digitalWrite(9, HIGH);          // 9番ピンに電気を流す ここからスイッチ等を通して7番ピンに繋ぐ
+}
+
 void loop() {
-	if (digitalRead(7) == HIGH) { // digitalRead関数を使って7番ピンに電気が通っているかを判定
-		digitalWrite(17, HIGH); // LED点灯
+	if (digitalRead(7) == HIGH) {   // digitalRead関数を使って7番ピンに電気が通っているかを判定
+		digitalWrite(17, HIGH);     // LED点灯
 	} else {
-		digitalWrite(17, LOW); // LED消灯
+		digitalWrite(17, LOW);      // LED消灯
 	}
 }</code></pre>
 

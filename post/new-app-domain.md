@@ -23,7 +23,7 @@ Let's Encryptとは、HTTPS接続をするために必要なSSL証明書を無�
 	listen [::]:80;  
 	server\_name kakudo.app;  
 	location / {
-		return 301 https://$server_name$request_uri;
+		return 301 https://$server\_name$request\_uri;
 	}  
 	location /.well-known/acme-challenge/ {
 		root /var/www/letsencrypt;

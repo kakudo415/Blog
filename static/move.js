@@ -37,16 +37,16 @@ if (history.pushState && history.state !== undefined) {
 	};
 
 	const mouseOver = (ev) => {
-		if (isLocal(ev.target.href)) {
-			preGET(ev.target.href);
+		if (isLocal(ev.currentTarget.href)) {
+			preGET(ev.currentTarget.href);
 		}
 	};
 
 	const mouseDown = (ev) => {
 		if (ev.button === 0) {
-			if (isLocal(ev.target.href)) {
-				if (Ajax.Path !== ev.target.href) {
-					preGET(ev.target.href);
+			if (isLocal(ev.currentTarget.href)) {
+				if (Ajax.Path !== ev.currentTarget.href) {
+					preGET(ev.currentTarget.href);
 				}
 				let count = 0;
 				let timer = setInterval(() => {
@@ -62,7 +62,7 @@ if (history.pushState && history.state !== undefined) {
 					}
 				}, 10);
 			} else {
-				location.href = ev.target.href;
+				location.href = ev.currentTarget.href;
 			}
 		}
 	};

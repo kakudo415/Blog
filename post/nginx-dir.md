@@ -3,13 +3,10 @@
 
 ## locationで正規表現を使う
 locationを指定するところで下のようにチルダ等を入れることで単に前方一致ではない正規表現を使うことができます  
-<pre><code>location = 完全一致 {}</code></pre>
-
-<pre><code>location ^~ 正規表現(マッチしたら検索終了) {}</code></pre>
-
-<pre><code>location ~ 正規表現 {}</code></pre>
-
-<pre><code>location ~* 正規表現(大文字小文字区別しない) {}</code></pre>
+<pre><code>location = 完全一致 {}  
+location ^~ 正規表現(マッチしたら検索終了) {}  
+location ~ 正規表現 {}  
+location ~* 正規表現(大文字小文字区別しない) {}</code></pre>
 
 ## マッチした文字列を変数にする
 <pre><code>location ~ (?&lt;変数名&gt;正規表現) {}</code></pre>

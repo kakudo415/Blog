@@ -14,11 +14,11 @@ location ~* 正規表現(大文字小文字区別しない) {}</code></pre>
 このように変数名を指定して正規表現を使いかっこで括ることでlocation内で使える変数を作ることができます（変数名は既存のものと被らないように）  
 そしてこのように書くことで  
 <pre><code>location ~ /dir/(?&lt;path&gt;.*) {
-	proxy_pass http://localhost:12345/$path$is_arg$args;
+	proxy\_pass http://localhost:12345/$path$is\_arg$args;
 }</code></pre>
 
 **$path** には/dir/以下のURLが入り、  
-**$is_args** にはクエリがある場合に ? が入り、  
+**$is\_args** にはクエリがある場合に ? が入り、  
 **$args** にクエリが入るので、正しく/dir/を飛ばしてリバースプロキシできるわけですね  
 
 ## 最後に(rewriteとの比較)

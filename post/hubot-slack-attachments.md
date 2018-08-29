@@ -5,8 +5,7 @@
 ## データ構造
 hubot-slackは所定の形のObjectを渡してやることで、通常の使用では使えないリッチな表現をすることができます（attachments）  
 <pre><code>
-let msg = new Object;
-
+let msg = new Object;  
 msg = {
   attachments: [ // 配列なので注意！複数同時に送れます
     {
